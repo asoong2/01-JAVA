@@ -1,4 +1,4 @@
-package com.ohgiraffers.setion01.literal;
+package com.ohgiraffers.section01.literal;
 
 public class Application2 {
 

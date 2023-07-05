@@ -1,4 +1,4 @@
-package com.ohgiraffers.setion01.literal;
+package com.ohgiraffers.section01.literal;
 
 public class Application3 {
 
@@ -31,6 +31,7 @@ public class Application3 {
         System.out.println("10과 20을 나누기 한 몫 : " + (10 / 20));
         System.out.println("10과 20을 나누기 한 나머지 : " + (10 % 20));
         // *와 /는 +보다 우선시되기 때문에 () 빠져도 되지만 보기 좋게 묶어놓음
+
 
 
     }
