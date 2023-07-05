@@ -24,7 +24,7 @@ public class Application2 {
         System.out.println(1.23 % 1.0); //약간의 오차가 생긴다
 
         /* 1-3. 정수와 실수의 연산 */
-        System.out.println("===== 정수와 정수의 연산 =====");
+        System.out.println("===== 정수와 실수의 연산 =====");
         System.out.println(123 + 0.5);
         System.out.println(123 - 0.5);
         System.out.println(123 * 0.5);
