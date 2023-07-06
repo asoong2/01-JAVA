@@ -26,5 +26,6 @@ public class Application3 {
         int result2 = (true || ++num2 > 0)? num2 : num2;
         System.out.println("||실행 확인 : " + result2); //10
 
+
     }
 }

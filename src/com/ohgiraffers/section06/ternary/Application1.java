@@ -22,5 +22,6 @@ public class Application1 {
         System.out.println("num5는 " + result5);
 
 
+
     }
 }
