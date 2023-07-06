@@ -22,6 +22,5 @@ public class Application1 {
         num =- 5;
         System.out.println("num : " + num);
 
-
     }
 }
