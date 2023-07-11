@@ -2,7 +2,7 @@ package com.ohgiraffers.section02.looping;
 
 import java.util.Scanner;
 
-public class B_nestedFor {
+public class A_nestedFor {
 
     public void printGugudanFromTwoToNine() {
         /* 2단부터 단을 1씩 증가시켜서 9단까지 출력하는 중첩 for문 */
