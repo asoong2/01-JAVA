@@ -16,7 +16,6 @@ abstract class Snail {
         System.out.printf("%s 달팽이가 %dmm를 이동했습니다. (누적 이동 거리: %dmm)\n", color, distance - distance, distance);
     }
 }
-
 class RedSnail extends Snail {
     public RedSnail() {
         super("빨강");
@@ -35,7 +34,6 @@ class RedSnail extends Snail {
         }
     }
 }
-
 class BlueSnail extends Snail {
     public BlueSnail() {
         super("파랑");
@@ -54,7 +52,6 @@ class BlueSnail extends Snail {
         }
     }
 
-
     private int getLeadingDistance() {
         int maxDistance = -1;
         for (Snail snail : SnailRaceGame.snails) {
@@ -65,12 +62,10 @@ class BlueSnail extends Snail {
         return maxDistance;
     }
 }
-
 class GreenSnail extends Snail {
     public GreenSnail() {
         super("초록");
     }
-
 
     @Override
     public void move(int diceRoll) {
@@ -79,28 +74,35 @@ class GreenSnail extends Snail {
         System.out.printf("%s 달팽이가 %dmm를 이동했습니다. (누적 이동 거리: %dmm)\n", color, diceRoll, distance);
 
         if (diceRoll == 6) {
-            int leadingDistance = getLeadingDistance();
-            if (distance != leadingDistance) {
-                distance = leadingDistance;
-                System.out.printf("%s 달팽이가 선두인 달팽이와 같은 위치로 이동했습니다. (누적 이동 거리: %dmm)\n", color, distance);
+            Snail leadingSnail = getLeadingSnail();
+            if (leadingSnail != null && leadingSnail != this) {
+                distance = leadingSnail.distance;
+                if (!color.equals("초록")) { // Exclude the print statement for GreenSnail
+                    System.out.printf("%s 달팽이가 선두인 %s 달팽이를 자기 위치로 이동했습니다. (누적 이동 거리: %dmm)\n",
+                            color, leadingSnail.color, distance);
+                }
             }
         }
     }
 
-    private int getLeadingDistance() {
+    private Snail getLeadingSnail() {
+        Snail leadingSnail = null;
         int maxDistance = -1;
         for (Snail snail : SnailRaceGame.snails) {
             if (snail.distance > maxDistance) {
                 maxDistance = snail.distance;
+                leadingSnail = snail;
             }
         }
-        return maxDistance;
+        return leadingSnail;
     }
 }
+
 
 public class SnailRaceGame {
     static Snail[] snails = { new RedSnail(), new BlueSnail(), new GreenSnail() };
     static Scanner scanner = new Scanner(System.in);
+
 
     public static void main(String[] args) {
         System.out.println("[달팽이 레이스]\n가장 먼저 30mm에 도착한 달팽이가 승리합니다!");
