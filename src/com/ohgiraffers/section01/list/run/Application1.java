@@ -16,7 +16,7 @@ public class Application1 {
         ArrayList alist = new ArrayList();
 
         /* 다형성을 적용하여 상위 레퍼런스로 ArrayList 객체를 참조할 수 있다.
-        * List 인터페이스 하위의 다양한 구현체들로 타입 변경이 가능하기 때문에 레퍼런스 타입은
+         * List 인터페이스 하위의 다양한 구현체들로 타입 변경이 가능하기 때문에 레퍼런스 타입은
         * List로 해두는 것이 더 유연한 코드를 작성하는 방법이다
         *  */
         List list = new ArrayList<>();
@@ -47,24 +47,30 @@ public class Application1 {
 
         /* ArrayList는 데이터의 중복 저장을 허용한다.
         * 배열과 같이 인덱스로 요소를 관리하기 때문에 가능하다. */
+        System.out.println("========apple 추가========");
         alist.add("apple");
         System.out.println("alist : " + alist);
 
         /* 원하는 인덱스 위치에 값을 추가할 수 있다.
         * 덮어쓰기가 아니라 이후 인덱스는 하나씩 뒤로 밀리게 된다.
         * */
+        System.out.println("\n========1 위치에 바나나 추가========");
         alist.add(1,"banana");
         System.out.println("alist : " + alist);
 
         /* 저장 된 값을 삭제할 때는 remove() 메소드를 사용한다.
         * 중간 인덱스의 값을 삭제하는 경우 자동으로 인덱스를 하나씩 앞으로 당긴다.
         * */
+        System.out.println("\n========2 위치의 123 삭제========");
         alist.remove(2);
         System.out.println("alist : " + alist);
 
         /* 지정 된 위치의 값을 수정할 때에도 인덱스를 활용하며 set() 메소드를 사용한다. */
+        System.out.println("\n========1 위치의 바나나 true로 수정========");
         alist.set(1,Boolean.valueOf(true));
         System.out.println("alist : " + alist);
+
+        System.out.println("");
 
         /* 모든 컬렉션 프레임워크 클래스는 제네릭 클래스로 작성 되어 있다.*/
         List<String> stringList = new ArrayList<>();
@@ -76,6 +82,7 @@ public class Application1 {
         /* 제네릭 타입을 지정하면 지정한 타입 외의 인스턴스는 지정하지 못함 */
         //stringList.add(123);
 
+        System.out.println("\n======== 지정한대로 호출 =========");
         System.out.println("stringList : " + stringList);
 
         /* 저장 순서를 유지하고 있는 stringList를 오름차순 정렬한다.
@@ -84,6 +91,7 @@ public class Application1 {
         Collections.sort(stringList);
 
         /* sort 메소드를 사용하면 list가 오름차순 정렬 된 후 정렬 상태가 유지된다.*/
+        System.out.println("\n======== sort 메세지 사용 오름차순 정렬 =========");
         System.out.println("stringList : " + stringList);
 
         /* LinkedList에 정의 된 역순 정렬을 활용해본다.
@@ -100,6 +108,7 @@ public class Application1 {
         * hasNext() : 다음 요소를 가지고 있으면 true, 더 이상 요소가 없으면 false
         * next() : 다음 요소 반환
         * */
+
         Iterator<String> dIter = ((LinkedList<String>)stringList).descendingIterator();
 //
 //        while (dIter.hasNext()) {
@@ -111,13 +120,14 @@ public class Application1 {
 //            System.out.println(dIter.next());
 //        }
 
-        /* 역순으로 정렬 된 결과르 저장하기 위해서는 새로운 ArrayList를 만들어서 저장해둔다. */
+        /* 역순으로 정렬 된 결과를 저장하기 위해서는 새로운 ArrayList를 만들어서 저장해둔다. */
         List<String> descList = new ArrayList<>();
 
         while (dIter.hasNext()) {
             descList.add(dIter.next());
         }
 
+        System.out.println("\n======== 역순 정렬 =========");
         System.out.println("descList : " + descList);
 
 

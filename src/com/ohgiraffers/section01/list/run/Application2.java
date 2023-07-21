@@ -10,6 +10,9 @@ public class Application2 {
     public static void main(String[] args) {
         /* ArrayList 사용자 정의 자료형으로 이용하기(정렬) */
 
+        /* --------------------------------------------- */
+        /* BookDTO 클래스 만들고 와서 할 일 */
+
         /* 여러 권의 책 목록을 관리할 ArrayList 생성*/
         List<BookDTO> bookList = new ArrayList<>();
 
@@ -20,9 +23,9 @@ public class Application2 {
         bookList.add(new BookDTO(5, "삼국유사", "일연", 58000));
 
         /* 향상 된 for문을 이용하여 정렬 전 책 목록 출력 */
+        System.out.println("정렬 전 책 목록 ==================== ");
         for (BookDTO book : bookList) {
             System.out.println(book);
-
         }
 
         /* 제네릭의 타입 제한에 의해 Comparable 타입을 가지고 있는 경우에만 sort가 가능하다.

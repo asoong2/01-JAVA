@@ -7,7 +7,10 @@ public class BookDTO {
     private String author;
     private int price;
 
+    /* 기본 생성자 */
+    public BookDTO() {}
 
+    /* 모든 필드를 초기화하는 생성자 */
     public BookDTO(int number, String title, String author, int price) {
         this.number = number;
         this.title = title;
