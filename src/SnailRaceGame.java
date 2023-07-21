@@ -62,6 +62,7 @@ class BlueSnail extends Snail {
         return maxDistance;
     }
 }
+
 class GreenSnail extends Snail {
     public GreenSnail() {
         super("초록");
@@ -77,10 +78,8 @@ class GreenSnail extends Snail {
             Snail leadingSnail = getLeadingSnail();
             if (leadingSnail != null && leadingSnail != this) {
                 distance = leadingSnail.distance;
-                if (!color.equals("초록")) { // Exclude the print statement for GreenSnail
-                    System.out.printf("%s 달팽이가 선두인 %s 달팽이를 자기 위치로 이동했습니다. (누적 이동 거리: %dmm)\n",
-                            color, leadingSnail.color, distance);
-                }
+                System.out.printf("%s 달팽이가 선두인 %s 달팽이를 자기 위치로 이동했습니다. (누적 이동 거리: %dmm)\n",
+                        color, leadingSnail.color, distance);
             }
         }
     }
@@ -167,3 +166,6 @@ public class SnailRaceGame {
         return ((int) (Math.random() * 6)) + 1;
     }
 }
+
+
+
